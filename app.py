@@ -15,7 +15,7 @@ with col0:
 
 with col01:
     # Título e descrição
-    st.markdown("<h1 style='text-align: left; padding-top: 80px;'>Regressão Linear Monovariada/Simples</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; padding-top: 80px;'>Regressão Linear Monovariada/Simples</h1>", unsafe_allow_html=True)
 
 # Adicionar uma linha divisória
 st.markdown("<hr>", unsafe_allow_html=True)
