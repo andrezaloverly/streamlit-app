@@ -11,7 +11,7 @@ st.set_page_config(layout="wide")
 col0, col01 = st.columns([1, 3])  #
 
 with col0:
-    st.image("images/image.png", use_column_width=True)
+    st.image("image.png", use_column_width=True)
 
 with col01:
     # Título e descrição
