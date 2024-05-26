@@ -61,8 +61,8 @@ with col3:
     if uploaded_file is not None:
         data = pd.read_excel(uploaded_file)
         # Adicionar uma caixa de seleção para exibir os dados
-    if st.checkbox("Mostrar dados carregados"):
-        st.write(data)
+        if st.checkbox("Mostrar dados carregados"):
+            st.write(data)
     # Mostrar nomes das colunas e permitir seleção de X e Y
     columns = data.columns.tolist()
     X_column = st.selectbox("Selecione a coluna X (independente)", columns)
