@@ -63,33 +63,33 @@ with col3:
         # Adicionar uma caixa de seleção para exibir os dados
         if st.checkbox("Mostrar dados carregados"):
             st.write(data)
-    # Mostrar nomes das colunas e permitir seleção de X e Y
-    columns = data.columns.tolist()
-    X_column = st.selectbox("Selecione a coluna X (independente)", columns)
-    Y_column = st.selectbox("Selecione a coluna Y (dependente)", columns)
-
-    if X_column and Y_column:
-        # Formatação dos dados
-        data[X_column] = data[X_column].astype(str).str.replace(',', '.').astype(float)
-        data[Y_column] = data[Y_column].astype(str).str.replace(',', '.').astype(float)
-        data = data.dropna(subset=[X_column, Y_column])
-
-        # Definir as variáveis X e Y
-        X = data[X_column].values
-        Y = data[Y_column].values
-
-        # Calcular as médias de X e Y
-        X_mean = np.mean(X)
-        Y_mean = np.mean(Y)
-
-        # Calcular os coeficientes da regressão
-        SXY = np.sum((X - X_mean) * (Y - Y_mean))
-        SXX = np.sum((X - X_mean) ** 2)
-        beta = SXY / SXX
-        alpha = Y_mean - beta * X_mean
-
-        # Fazer as previsões
-        Y_pred = alpha + beta * X
+        # Mostrar nomes das colunas e permitir seleção de X e Y
+        columns = data.columns.tolist()
+        X_column = st.selectbox("Selecione a coluna X (independente)", columns)
+        Y_column = st.selectbox("Selecione a coluna Y (dependente)", columns)
+    
+        if X_column and Y_column:
+            # Formatação dos dados
+            data[X_column] = data[X_column].astype(str).str.replace(',', '.').astype(float)
+            data[Y_column] = data[Y_column].astype(str).str.replace(',', '.').astype(float)
+            data = data.dropna(subset=[X_column, Y_column])
+    
+            # Definir as variáveis X e Y
+            X = data[X_column].values
+            Y = data[Y_column].values
+    
+            # Calcular as médias de X e Y
+            X_mean = np.mean(X)
+            Y_mean = np.mean(Y)
+    
+            # Calcular os coeficientes da regressão
+            SXY = np.sum((X - X_mean) * (Y - Y_mean))
+            SXX = np.sum((X - X_mean) ** 2)
+            beta = SXY / SXX
+            alpha = Y_mean - beta * X_mean
+    
+            # Fazer as previsões
+            Y_pred = alpha + beta * X
 
 
 with col4:
