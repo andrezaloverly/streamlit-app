@@ -8,7 +8,7 @@ from sklearn.linear_model import LinearRegression
 st.set_page_config(layout="wide")
 
 # Criar duas colunas com proporções diferentes
-col0, col01 = st.columns([1, 3])  #
+col0, col01 = st.columns([1, 4])  #
 
 with col0:
     st.image("image.png", use_column_width=True)
