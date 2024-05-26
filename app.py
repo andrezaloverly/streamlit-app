@@ -66,7 +66,9 @@ with col3:
         # Mostrar nomes das colunas e permitir seleção de X e Y
         columns = data.columns.tolist()
         X_column = st.selectbox("Selecione a coluna X (independente)", columns)
-        Y_column = st.selectbox("Selecione a coluna Y (dependente)", columns)
+        # Atualizar a lista de colunas para Y, excluindo a coluna selecionada para X
+        remaining_columns = [col for col in columns if col != X_column]
+        Y_column = st.selectbox("Selecione a coluna Y (dependente)", remaining_columns)
     
         if X_column and Y_column:
             # Formatação dos dados
